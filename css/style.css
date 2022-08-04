@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;  
+  background: var(--Light-grayish-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+}
+
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+
+}
+
+.logo-img {
+  width: 100px;
+  margin: 10rem auto 2rem;
+}
+
+.tip-container {
+  max-width: 850px;
+  border-radius: 1rem;
+  margin: auto;
+  margin-bottom: 10rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  place-items: center;
+  gap: 2rem;
+  background: var(--White);
+}
+
+.col1 {
+  padding: 5px 0;
+}
+
+.col1, .col2{
+  width: 100%;
+  height: 100%;
+}
+
+label {
+  font-weight: bold;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.input-field {
+  position: relative;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.input-field input {
+  background: var(--Very-light-grayish-cyan);
+  padding: 5px;
+  padding-right: 10px;
+  font-size: 1.5rem;
+  border-color: transparent;
+  text-align: right;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  font-family: 'Space Mono', monospace; 
+  transition: all 0.3s linear;
+}
+
+:is(.input-field, .btn) input:hover {
+  border: 2px solid var(--Strong-cyan);
+}
+
+:is(.input-field, .btn) input:focus {
+  outline: var(--Strong-cyan);
+  border: 2px solid var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+  font-weight: bold;
+  caret-color: var(--Strong-cyan);
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  /* margin: 0; */
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input-field input:focus{
+   font-size: 1.8rem;
+}
+
+.input-field img {
+  position: absolute;
+  width: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+::placeholder {
+  font-weight: bold;
+  color: var(--Light-grayish-cyan);  
+}
+
+.tip-btns {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.btn {
+  cursor: pointer;
+  display: block;
+  background: var(--Very-dark-cyan);
+  color: white;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  transition: all 0.3s linear;
+}
+
+.btn-active {
+  background: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+.btn input {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  font-family: inherit;
+  font-size: 1.5rem;
+  border-color: transparent;
+  text-align: right;
+  border-radius: 0.3rem;
+  background: var(--Very-light-grayish-cyan);
+  font-family: 'Space Mono', monospace; 
+  padding: 5px;
+  padding-right: 10px;
+  transition: all 0.3s linear;
+}
+
+.btn input::placeholder {
+  color: var(--Very-dark-cyan);
+  text-align: center;
+}
+
+.btn:hover {
+  background: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+.custom-btn {
+  letter-spacing: 1px;
+  padding: 0;
+  background: none;
+}
+
+.custom-btn:hover {
+  background: none;
+}
+
+.col2 {
+  background: var(--Very-dark-cyan);
+  border-radius: 1rem;
+  color: white;
+  padding: 2rem;
+}
+
+.col2 h4 {
+  font-size: 0.9rem;
+}
+
+.col2 .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.col2 .row h3 {
+  font-size: 3rem;
+  line-height: 3rem;
+  color: var(--Strong-cyan);
+}
+
+.row span {
+  color: var(--Grayish-cyan);
+}
+
+.reset-btn {
+  margin-top: 8rem;
+  color: var(--Very-dark-cyan);
+  background: var(--Strong-cyan);
+  border-color: transparent;
+  font-weight: bold;
+  transition: all 0.3s linear;
+}
+
+.reset-btn:hover {
+  background: var(--Dark-grayish-cyan);
+  color: var(--Strong-cyan);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row3 .warning {
+  color: red;
+  display: none;
+}
+
+.show-row3 input {
+  border: 2px solid red;
+}
+
+.show-row3 .warning {
+  display: block;
+}
+
+@media only screen and (max-width: 900px) {
+  .btn input::placeholder {
+    font-size: 1rem;
+  }
+
+  .tip-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tip calculator app</title>
+  <!-- fontawesome css -->
+  <link rel="stylesheet" href="./fontawesome/css/all.css">
+  <!-- main css -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="logo-img">
+    <img src="./images/logo.svg" alt="logo image">
+  </div>
+
+  <div class="tip-container">
+    <div class="col1">
+      <div class=" row row1">
+        <label for="bill">Bill</label>
+        <div class="input-field">
+          <img src="./images/icon-dollar.svg" alt="dollar icon" class="abs-img">
+          <input type="number" id="bill" placeholder="0">
+        </div>
+      </div>
+
+      <div class=" row row2">
+        <label for="percent">Select Tip %</label>
+        <div class="tip-btns">
+          <div class="btn tip-btn">5%</div>
+          <div class="btn tip-btn">10%</div>
+          <div class="btn tip-btn">15%</div>
+          <div class="btn tip-btn">25%</div>
+          <div class="btn tip-btn">50%</div>
+          <div class="btn custom-btn">
+            <input type="number" placeholder="Custom" id="custom">
+          </div>
+
+        </div>
+      </div>
+
+      <div class=" row row3">
+        <label for="num" class="flex">
+          <span>Number of People</span>
+          <span class="warning">Can't be zero</span>
+        </label>
+        <div class="input-field">
+          <img src="./images/icon-person.svg" alt="dollar icon" class="abs-img">
+          <input type="number" id="num" placeholder="0">
+          
+        </div>
+      </div>
+
+    </div>
+    <div class="col2">
+      <div class="tip-amount row">
+        <h4>Tip Amount <br> <span>/ person</span></h4>
+        <h3 class="amt-per-person">$0.00</h3>
+      </div>
+
+      <div class="tip-amount row">
+        <h4>Total <br> <span>/ person</span></h4>
+        <h3 class="total-per-person">$0.00</h3>
+      </div>
+
+      <button class="btn reset-btn">
+        RESET
+      </button>
+    </div>
+
+  </div>
+  
+
+  <script src="./script/app.js"></script>
+</body>
+</html>
+
+
+
+
