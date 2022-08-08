@@ -10,6 +10,7 @@ body {
   font-family: 'Space Mono', monospace;  
   background: var(--Light-grayish-cyan);
   color: var(--Very-dark-cyan);
+  min-height: 100vh;
 }
 
 a {
@@ -48,7 +49,7 @@ img {
   max-width: 850px;
   border-radius: 1rem;
   margin: auto;
-  margin-bottom: 10rem;
+  /* margin-bottom: 10rem; */
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -262,6 +263,12 @@ input[type=number] {
   .tip-container {
     grid-template-columns: 1fr;
   }
+}
+
+@media only screen and (max-width: 300px) {
+ .tip-container {
+  padding: 0.5rem;
+ }
 }
 
 
