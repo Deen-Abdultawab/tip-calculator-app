@@ -63,7 +63,6 @@ tipBtns.addEventListener('click', (e) => {
       calcTip(); 
     } else {
       alert(`bill cannot be negative or zero`);
-      removeBtnActive();
       clearResults();
     };
     
@@ -105,6 +104,7 @@ function removeBtnActive(){
 function clearResults() {
   amountPerPerson.textContent = '$0.00';
   totalAmountPerPerson.textContent = '$0.00';
+  removeBtnActive();
 }
 
 function calcTip() {
@@ -118,7 +118,6 @@ function calcTip() {
   else {
     warningContainer.classList.add('show-row3');
     removeBtnActive();
-
   }
 
 }
