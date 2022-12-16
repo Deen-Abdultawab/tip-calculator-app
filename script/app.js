@@ -21,7 +21,7 @@ window.addEventListener('keydown', (e) => {
     if(customValue > 0){
       tipPercent = customValue;
       if(bill > 0){
-        if(numOfPeople> 0){
+        if(numOfPeople > 0){
           calcTip(); 
         } else {
           warningContainer.classList.add('show-row3');
@@ -35,15 +35,6 @@ window.addEventListener('keydown', (e) => {
       alert(`set tip percent`);
       clearResults();
     }  
-
-    tipBtns.addEventListener('click', (e) => {
-      let eventCLass = e.target.classList;
-      if(eventCLass.contains('tip-btn')){ 
-        customHTML.innerHTML = `<input type="number" placeholder="Custom" id="custom">`
-        customValue;
-      }
-    })
-
   } 
 });
 
@@ -51,6 +42,12 @@ window.addEventListener('keydown', (e) => {
 
 tipBtns.addEventListener('click', (e) => {
   let eventCLass = e.target.classList;
+
+  if(eventCLass.contains('tip-btn')){ 
+    customHTML.innerHTML = `<input type="number" placeholder="Custom" id="custom">`
+    customValue;
+  }
+
   if(eventCLass.contains('tip-btn')){
     
     tipPercent = Number(e.target.textContent.replace('%','')) / 100;
@@ -58,30 +55,21 @@ tipBtns.addEventListener('click', (e) => {
     numOfPeople = Number(document.getElementById('num').value);
     customValue = Number(document.getElementById('custom').value);    
 
-    btnArray.map((e) => {
-      if(e.classList.contains('btn-active')){
-        e.classList.remove('btn-active');
-      }
-    });
+    removeBtnActive();
   
     eventCLass.add('btn-active');
 
     if(bill > 0){
       calcTip(); 
     } else {
-      alert(`bill cannot be negative or zero`)
+      alert(`bill cannot be negative or zero`);
+      removeBtnActive();
       clearResults();
     };
     
   } else if(!eventCLass.contains('tip-btn')) {
-    btnArray.map((e) => {
-      if(e.classList.contains('btn-active')){
-        e.classList.remove('btn-active');
-      }
-    });
-
+    removeBtnActive();
     tipPercent;
-    
   }
 });
 
@@ -91,11 +79,8 @@ resetBtn.addEventListener('click', () => {
   warningContainer.classList.remove('show-row3');
   document.getElementById('num').value = '';
   document.getElementById('bill').value = '';
-  btnArray.map((e) => {
-    if(e.classList.contains('btn-active')){
-      e.classList.remove('btn-active');
-    }
-  });
+  removeBtnActive();
+ 
 
   tipPercent;
   customValue;
@@ -107,6 +92,14 @@ resetBtn.addEventListener('click', () => {
 // Main Functions
 function roundToTwo(num){
   return +(Math.round(num +'e+2') + 'e-2');
+}
+
+function removeBtnActive(){
+  btnArray.map((e) => {
+    if(e.classList.contains('btn-active')){
+      e.classList.remove('btn-active');
+    }
+  })
 }
 
 function clearResults() {
@@ -124,6 +117,8 @@ function calcTip() {
   } 
   else {
     warningContainer.classList.add('show-row3');
+    removeBtnActive();
+
   }
 
 }
